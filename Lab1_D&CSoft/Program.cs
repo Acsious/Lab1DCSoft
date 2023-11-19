@@ -1,7 +1,15 @@
-﻿using Lab1DCSoft;
+﻿using Lab1_D_CSoft;
+using Lab1DCSoft;
 
-Crew crew = new Crew();
-crew.Elf.CreateWeapon().Hit();
-crew.Warrior.CreateWeapon().Hit();
-crew.Elf.CreateMovement().Move();
-crew.Warrior.CreateMovement().Move();
+RoadAccidentsToday roadAccidentsToday = new RoadAccidentsToday();
+
+Console.WriteLine("Отчет о дорожных проишествиях сегодня: ");
+
+Console.WriteLine("\nМелкое дтп: ");
+roadAccidentsToday.smallCrash.CreateDamage().InsuranceAssessment();
+roadAccidentsToday.smallCrash.CreateInjury().PhysicalCondition();
+
+Console.WriteLine("\nКрупное дтп: ");
+roadAccidentsToday.largeCrash.CreateDamage().InsuranceAssessment();
+roadAccidentsToday.largeCrash.CreateInjury().PhysicalCondition();
+
