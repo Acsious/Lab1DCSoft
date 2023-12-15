@@ -1,9 +1,17 @@
-﻿namespace Lab1DCSoft;
+﻿using System.Text;
+
+namespace Lab1DCSoft;
 internal class Total : Vehicle
 {
-    public override void InsuranceAssessment()
+    public override async void InsuranceAssessmentAsync()
     {
-        Console.WriteLine("Транспортные средства не подлежат восстановлению");
+        using FileStream fstream = new FileStream("TotalOutput.txt", FileMode.OpenOrCreate);
+        // преобразуем строку в байты
+        byte[] buffer = Encoding.Default.GetBytes("Транспортные средства не подлежат восстановлению");
+        // запись массива байтов в файл
+        await fstream.WriteAsync(buffer);
+        Console.WriteLine("Текст записан в файл");
+
     }
 }
 

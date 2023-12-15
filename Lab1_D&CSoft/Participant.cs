@@ -1,5 +1,5 @@
 ﻿namespace Lab1DCSoft;
 internal abstract class Participant
 {
-    public abstract void PhysicalCondition();
+    public abstract void PhysicalConditionAsync();
 }
